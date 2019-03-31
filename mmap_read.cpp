@@ -16,7 +16,7 @@ void handler(int arg) ;
 int main(int argc, char**argv)
 {
 
-    int sh = shm_open(shm_name, O_CREAT|O_RDWR, 0677)  ;
+    int sh = shm_open(shm_name, O_RDWR, 0677)  ;
     
     char* a = (char*)mmap(NULL, SHARED_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, sh, 0);
     signal(SIGINT, handler) ;
